@@ -23,7 +23,6 @@ ChatApp is a web-based application designed to facilitate real-time messaging be
 - [Supabase](https://supabase.io/)
   - Supabase Auth for user authentication
   - Supabase Database for storing chat messages
-  - Supabase Realtime for real-time message updates
 
 ## Getting Started
 
@@ -104,4 +103,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries, please contact [wkswaileh@example.com](mailto:wkswaileh@example.com).
+For any inquiries, please contact [wkswaileh@gmail.com](mailto:wkswaileh@gmail.com).
