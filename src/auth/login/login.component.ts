@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { AuthService } from '../../../auth/auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,6 @@ export class LoginComponent {
   private authService = inject(AuthService);
 
   async handleAuth() {
-    const response = await this.authService.signInWithGoogle();
-    console.log(response);
+    await this.authService.signInWithGoogle();
   }
 }

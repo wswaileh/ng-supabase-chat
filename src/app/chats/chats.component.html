@@ -1,0 +1,74 @@
+<main>
+  <div class="container">
+    <h3 class="mb-3">
+      Supa Chat
+      <button class="btn btn-secondary" (click)="logout()" style="float: right">
+        Log out
+      </button>
+    </h3>
+    <div class="card">
+      <div *ngIf="currentUserId() !== null">
+        <div class="col-12 col-lg-12 col-xl-12">
+          @for (chat of chats(); track chat) {
+          <app-message-card
+            [chat]="chat"
+            [currentUserId]="currentUserId()"
+            (delete)="deleteMessageHandler(chat)"
+          ></app-message-card>
+          } @empty {
+          <div class="text-center py-3">No messages yet</div>
+          }
+
+          <form [formGroup]="chatForm" (ngSubmit)="sendMessage()">
+            <div class="flex-grow-0 py-3 px-4 border-top">
+              <div class="input-group">
+                <input
+                  type="text"
+                  formControlName="chat_message"
+                  class="form-control"
+                  placeholder="Type your message"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!chatForm.valid"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
