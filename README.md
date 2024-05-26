@@ -9,7 +9,6 @@ ChatApp is a web-based application designed to facilitate real-time messaging be
 - **Real-time Messaging**: Send and receive messages instantly.
 - **User Authentication**: Secure sign-up and login using Supabase's Google authentication.
 - **Message Persistence**: Store chat history in Supabase database.
-- **Responsive Design**: Accessible on various devices.
 
 ## Tech Stack
 
